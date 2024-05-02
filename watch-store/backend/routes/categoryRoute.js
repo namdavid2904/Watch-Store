@@ -1,0 +1,10 @@
+const express = require("express");
+const { createCategory, updateCategory, deleteCategory, getCategory, getCategories } = require("../controller/categoryCtrl");
+const { verifyToken, isAdmin } = require("../middlewares/authMW");
+const router = express.Router();
+router.post("/", verifyToken, isAdmin, createCategory);
+router.get("/getcategories", getCategories);
+router.get("/:id", getCategory);
+router.delete("/:id", verifyToken, isAdmin, deleteCategory);
+router.put("/:id", verifyToken, isAdmin, updateCategory);
+module.exports = router;

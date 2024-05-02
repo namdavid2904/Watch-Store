@@ -1,0 +1,10 @@
+const express = require("express");
+const { createBrand, updateBrand, deleteBrand, getBrand, getBrands } = require("../controller/brandCtrl");
+const { verifyToken, isAdmin } = require("../middlewares/authMW");
+const router = express.Router();
+router.post("/", verifyToken, isAdmin, createBrand);
+router.get("/getbrands", getBrands);
+router.get("/:id", getBrand);
+router.delete("/:id", verifyToken, isAdmin, deleteBrand);
+router.put("/:id", verifyToken, isAdmin, updateBrand);
+module.exports = router;
