@@ -71,7 +71,7 @@ This project implements the backend functionalities required for an ecommerce pl
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/Watch-Store.git
+   git clone https://github.com/namdavid2904/Watch-Store.git
    ```
 
 2. Navigate to the project directory:
